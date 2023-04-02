@@ -14,8 +14,7 @@ const DENIED_PATH_GROUPS = [
     'pages/*/**',
     'features/*/**',
     'entities/*/**',
-    'shared/*/*/**',
-    // Для shared +1 уровень, т.к. там чаще мы обращаемся к конкретной библиотеке/компоненты
+    'shared/*/*/**', // Для shared +1 уровень, т.к. там чаще мы обращаемся к конкретной библиотеке/компоненты
     // Prefer absolute imports instead of relatives (for root modules)
     '../**/app',
     '../**/pages',
@@ -23,6 +22,7 @@ const DENIED_PATH_GROUPS = [
     '../**/entities',
     '../**/shared',
 ];
+
 module.exports = {
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -36,10 +36,11 @@ module.exports = {
     env: {
         browser: true,
         es6: true,
+        node: true,
     },
     plugins: ['react', '@typescript-eslint'],
     extends: [
-        'react-app',
+        // 'react-app',
         'eslint:recommended',
         'plugin:import/errors',
         'plugin:import/warnings',
@@ -47,8 +48,6 @@ module.exports = {
         'plugin:prettier/recommended',
         'plugin:react/recommended',
         'prettier',
-        'plugin:storybook/recommended',
-        'plugin:storybook/recommended',
     ],
     rules: {
         // TODO: eslint-plugin-boundaries
@@ -66,5 +65,6 @@ module.exports = {
                 patterns: DENIED_PATH_GROUPS,
             },
         ],
+        'react/react-in-jsx-scope': 'off',
     },
 };

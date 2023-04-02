@@ -11,3 +11,24 @@
 body {
     font-family: 'Inter', 'sans-serif';
 }
+
+@mixin text-xl {
+    font-size: 30px;
+    color: $slate-900;
+    font-weight: 600;
+    line-height: 38px;
+}
+
+@mixin text-md($color, $weight) {
+    font-size: 1rem;
+    line-height: 20px;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin text-sm($color, $weight) {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: $weight;
+    color: $color;
+}
