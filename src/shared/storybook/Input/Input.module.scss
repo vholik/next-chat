@@ -1,0 +1,63 @@
+@import '../index.scss';
+
+@mixin input {
+    background-color: $slate-50;
+    border: none;
+    outline: none;
+    font-family: $font;
+    font-size: 1rem;
+    line-height: 24px;
+    padding: 0.6em 5em 0.6em 0.8em;
+    border-radius: 8px;
+    font-weight: 400;
+
+    &::placeholder {
+        font-weight: 500;
+        color: $slate-400;
+    }
+}
+
+.label {
+    color: $slate-900;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 500;
+}
+
+.wrapper {
+    background-color: $slate-50;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-left: 14px;
+}
+
+.input {
+    @include input();
+    background-color: transparent;
+    border: 1px solid $slate-200;
+    font-weight: 400;
+    width: max-content;
+
+    &::placeholder {
+        font-weight: 400;
+        color: $slate-500;
+    }
+}
+
+.primary {
+    @include input();
+}
+
+.rounded {
+    border-radius: 10rem;
+}
+
+.centered {
+    justify-content: center;
+}
